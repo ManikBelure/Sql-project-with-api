@@ -51,3 +51,21 @@ public class StudentDAO {
         return studentList;
     }
 }
+public List<Student> getFilteredStudentDetails(int minMarks, int maxMarks) {
+    List<Student> filteredStudentList = new ArrayList<>();
+
+    try {
+        // Prepare SQL query with filtering criteria
+        String sql = "SELECT * FROM students WHERE total_marks >= ? AND total_marks <= ?";
+        statement = connection.prepareStatement(sql);
+        statement.setInt(1, minMarks);
+        statement.setInt(2, maxMarks);
+        
+        // Execute query
+        ResultSet resultSet = statement.executeQuery();
+        
+        // Process query results
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            }
+        }
