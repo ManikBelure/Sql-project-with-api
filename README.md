@@ -4,7 +4,6 @@ import java.sql.*;
 public class StudentDAO {
     private Connection connection;
     private PreparedStatement statement;
-
     public StudentDAO() {
         // Establish database connection
         try {
